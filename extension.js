@@ -181,7 +181,11 @@ const executeSolutionFile = () => {
     return new Promise((resolve, reject) => {
         const solutionFileCpp = path.join(__dirname, 'solution.cpp');
         const solutionFilePy = path.join(__dirname, 'solution.py');
-        const solutionFile = fs.existsSync(solutionFileCpp) ? solutionFileCpp : fs.existsSync(solutionFilePy) ? solutionFilePy : null;
+        const solutionFile = fs.existsSync(solutionFileCpp)
+            ? solutionFileCpp
+            : fs.existsSync(solutionFilePy)
+            ? solutionFilePy
+            : null;
 
         if (!solutionFile) {
             vscode.window.showErrorMessage('Solution file (solution.cpp or solution.py) not found.');
@@ -189,10 +193,12 @@ const executeSolutionFile = () => {
             return;
         }
 
+        // Construct command
         const command = solutionFile.endsWith('.cpp')
-            ? `g++ ${solutionFile} -o solution && solution`
-            : `python ${solutionFile}`;
+            ? `g++ "${solutionFile}" -o solution && solution`
+            : `python "${solutionFile}"`;
 
+        // Execute command
         exec(command, (error, stdout, stderr) => {
             if (error || stderr) {
                 vscode.window.showErrorMessage(`Error executing solution file: ${stderr || error.message}`);
