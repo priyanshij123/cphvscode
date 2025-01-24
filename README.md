@@ -1,65 +1,94 @@
-# cph-vscode README
+# CPH vscode extension
+The CPH (Competitive Programming Helper) vscode extension automates fetching test cases from LeetCode problems and enables users to test their solutions directly within VS Code. With features to fetch, run, and manage test cases efficiently, this extension simplifies the workflow for competitive programmers.
 
-This is the README for your extension "cph-vscode". After writing up a brief description, we recommend including the following sections.
+## 📋 Features
 
-## Features
+Fetches test cases from LeetCode problem descriptions.
+Stores input and output test cases in separate text files.
+Allows users to run test cases directly in the extension host window.
+Supports editing and adding custom test cases.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## 🚀How it works
 
-For example if there is an image subfolder under your extension project workspace:
+ 1)download the Repository
+https://github.com/priyanshij123/cphvscode.git  
 
-\!\[feature X\]\(images/feature-x.png\)
+2)Open the repository in a new VS Code window.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+3)Debug the Extension:
+Start debugging to launch the Extension Host window.
 
-## Requirements
+4)Fetching Test Cases:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Open the Command Palette (Ctrl + Shift + P ).
+
+Search for CPH: Fetch Test Cases.
+
+Paste the URL of the LeetCode problem when prompted.
+
+Input and output test cases will be saved in separate .txt files in the working directory.
+
+
+5)Write Your Solution:
+
+Write your solution in the solution file using the provided template.
+"Specify the test case directory in the solution file according to your PC's setup."
+
+
+Reload the Extension Host window.
+Use the Command Palette to run the CPH: Run Test Cases command.
+View test results (Passed or Failed) in the debug console.
+
+Use the extension to edit or add custom test cases as needed.
+
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+make sure the extension has launch.json file 
 
-For example:
 
-This extension contributes the following settings:
+	{"version": "0.2.0",
+ 
+	"configurations": [
+ 
+		{
+  
+			"name": "Run Extension",
+   
+			"type": "extensionHost",
+   
+			"request": "launch",
+   
+			"args": [
+   
+				"--extensionDevelopmentPath=${workspaceFolder}"
+    
+			]
+   
+		}
+  
+	]}
+ 
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
 
-## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## ⚡ Commands
 
-## Release Notes
+CPH:Fetch Test Cases : Fetch test cases from a LeetCode problem URL.
 
-Users appreciate release notes as you update your extension.
+CPH:Run Test Cases :	Execute the solution file against fetched test cases.
 
-### 1.0.0
 
-Initial release of ...
+## 🖥 Requirements
 
-### 1.0.1
+Visual Studio Code installed on your machine.
 
-Fixed issue #.
+Node.js installed .
 
-### 1.1.0
+Puppeteer (install using npm install puppeteer).
 
-Added features X, Y, and Z.
+Python and/or C++ compiler installed locally.
 
----
 
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
