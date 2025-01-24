@@ -90,5 +90,9 @@ Puppeteer (install using npm install puppeteer).
 Python and/or C++ compiler installed locally.
 
 
+## video explanation link
+
+https://drive.google.com/file/d/1ZfTg9HMJAvSsGTVdA8iHoWEti82z_DGt/view?usp=drivesdk
+
 
 **Enjoy!**
